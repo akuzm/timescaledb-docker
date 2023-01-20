@@ -52,7 +52,7 @@ jobs:
           if [ "${{ github.event.inputs.no_tag_latest }}" == "true" ]
           then
               export BETA=1
-          endif
+          fi
           make multi${{ matrix.oss }} ORG=$ORG PG_VER=pg${{ matrix.pg }} \
               TS_VERSION=$TS_VERSION PREV_EXTRA="${{ matrix.oss }}" BETA=$BETA
 
@@ -79,6 +79,6 @@ jobs:
           if [ "${{ github.event.inputs.no_tag_latest }}" == "true" ]
           then
               export BETA=1
-          endif
+          fi
           make push ORG=$ORG PG_VER=pg${{ matrix.pg }} TS_VERSION=$TS_VERSION BETA=$BETA
         working-directory: bitnami
